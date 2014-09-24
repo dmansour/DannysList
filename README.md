@@ -4,7 +4,7 @@ DannysList
 The Greatest Website Ever Made!
 
 
-![](https://www.google.com/images/srpr/logo11w.png | width=100px)
+![](https://www.google.com/images/srpr/logo11w.png)
 
 test!!!
 test 2!!!
