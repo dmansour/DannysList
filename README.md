@@ -3,8 +3,7 @@ DannysList
 
 The Greatest Website Ever Made!
 
-
-![](https://www.google.com/images/srpr/logo11w.png)
+(^)__(>.<)__(^)
 
 test!!!
 test 2!!!
