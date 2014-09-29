@@ -7,6 +7,7 @@
 <title>Main Page</title>
 </head>
 <body>
+<jsp:forward page="WEB-INF/views/login.jsp" />
 	Hello World!
 </body>
 </html>
