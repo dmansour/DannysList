@@ -4,10 +4,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Main Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="WEB-INF/views/login.jsp" />
-	Hello World!
+
+<%
+	String username = 
+	(String) session.getAttribute("username");
+	
+	if(username == null) {
+		%><jsp:forward page="login.jsp" /> <%
+				
+	}
+	
+
+%>
+
+	Welcome, <%=username %> <br />
+	<a href="logout.jsp">logout</a>
 </body>
 </html>
