@@ -1,5 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>DannysList Portal</title>
@@ -17,20 +18,20 @@ a {
 <p>&nbsp;</p>
 <table style="margin:0px auto; width:400px" align="center">
   <tr>
-    <th width="33%" align="center" scope="row"><h1>Welcome To DannysList!</h1></th>
-    </form></td>
+    <th width="33%" align="center" scope="row"><h2><center>Welcome To DannysList!</center></h2></th>
   </tr>
   <tr style="margin: 0">
     <td align="center" valign="top"><p>
     <form name="mainform" method="post">
-    	<input type="submit" name="Login" value="Login" style="width:250px;"><br />
-    	<p>&nbsp;</p>
-   		<input type="submit" name="Register" value="Register" style="width:250px;"><br />
-   		<p>&nbsp;</p>
-   		<input type="submit" name="Credits" value="Credits" style="width:250px;"><br />
-   		<p>&nbsp;</p>
-   		<input type="submit" name="About" value="About" style="width:250px;"><br />
+    	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="login.jsp">Login</a>
+		<p>&nbsp;</p>
+		<a class="btn btn-primary btn-lg" style="width:200px" id="register" href="#">Register</a>
+		<p>&nbsp;</p>
+		<a class="btn btn-primary btn-lg" style="width:200px" id="credits" href="#">Credits</a>
+		<p>&nbsp;</p>
+		<a class="btn btn-primary btn-lg" style="width:200px" id="about" href="#">About</a>
 	</form>
+	</td>
 </tr>
 </table>
 </body>
