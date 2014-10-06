@@ -23,13 +23,27 @@ a {
   <tr style="margin: 0">
     <td align="center" valign="top"><p>
     <form name="mainform" method="post">
-    	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="login.jsp">Login</a>
-		<p>&nbsp;</p>
-		<a class="btn btn-primary btn-lg" style="width:200px" id="register" href="#">Register</a>
-		<p>&nbsp;</p>
-		<a class="btn btn-primary btn-lg" style="width:200px" id="credits" href="#">Credits</a>
-		<p>&nbsp;</p>
-		<a class="btn btn-primary btn-lg" style="width:200px" id="about" href="#">About</a>
+<!--     	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="login.jsp">Login</a> -->
+<!-- 		<p>&nbsp;</p> -->
+<!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="register" href="#">Register</a> -->
+<!-- 		<p>&nbsp;</p> -->
+<!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="credits" href="#">Credits</a> -->
+<!-- 		<p>&nbsp;</p> -->
+<!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="about" href="#">About</a> -->
+		<div class="input-group">
+		<span class="input-group-addon">Username:</span>
+  		<input type="text" class="form-control"><br />
+  		</div>
+		<br />
+		<div class="input-group">
+		<span class="input-group-addon">Password:</span>
+  		<input type="text" class="form-control"><br />
+  		</div>
+  		<br />
+
+  		<a class="btn btn-primary btn-default" style="width:100px" id="login" href="login.jsp">Login</a>
+		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="#">Register</a>
+	</div>
 	</form>
 	</td>
 </tr>
