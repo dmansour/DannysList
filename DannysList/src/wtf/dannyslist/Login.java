@@ -1,4 +1,4 @@
-package com.dannyslist;
+package wtf.dannyslist;
 
 import java.io.IOException;
 
