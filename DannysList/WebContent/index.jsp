@@ -22,8 +22,8 @@ a {
   </tr>
   <tr style="margin: 0">
     <td align="center" valign="top"><p>
-    <form name="mainform" method="post">
-<!--     	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="login.jsp">Login</a> -->
+    <form action="checklogin.jsp" name="mainform" method="post">
+<!--     	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="checklogin.jsp">Login</a> -->
 <!-- 		<p>&nbsp;</p> -->
 <!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="register" href="#">Register</a> -->
 <!-- 		<p>&nbsp;</p> -->
@@ -32,17 +32,17 @@ a {
 <!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="about" href="#">About</a> -->
 		<div class="input-group">
 		<span class="input-group-addon">Username:</span>
-  		<input type="text" class="form-control"><br />
+  		<input type="text" class="form-control" name="username" id="username"><br />
   		</div>
 		<br />
 		<div class="input-group">
 		<span class="input-group-addon">Password:</span>
-  		<input type="text" class="form-control"><br />
+  		<input type="password" class="form-control" name="password" id="password"><br />
   		</div>
   		<br />
 
-  		<a class="btn btn-primary btn-default" style="width:100px" id="login" href="login.jsp">Login</a>
-		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="registeruser.jsp">Register</a>
+  		<input type="submit" class="btn btn-primary btn-default" style="width:100px" id="login" value="Login" ></input>
+		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="registration.jsp">Register</a>
 	</div>
 	</form>
 	</td>

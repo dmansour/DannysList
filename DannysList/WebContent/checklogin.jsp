@@ -15,7 +15,7 @@
         %> Error: no username <%
     } else {
         session.setAttribute("username", username);
-     %> <jsp:forward page="index.jsp" /> <%
+     %> <jsp:forward page="memberpage.jsp" /> <%
     }
 
 %>
