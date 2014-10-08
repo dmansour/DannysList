@@ -42,7 +42,7 @@ a {
   		<br />
 
   		<a class="btn btn-primary btn-default" style="width:100px" id="login" href="login.jsp">Login</a>
-		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="#">Register</a>
+		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="registeruser.jsp">Register</a>
 	</div>
 	</form>
 	</td>
