@@ -16,6 +16,6 @@ a {
 <body style="background-color: #efefef; background-image: url('Naer_Wallpaper_by_Gravideo_Interactive.jpg');
     background-repeat: no-repeat; background-attachment:fixed; background-position: center">
 <p>&nbsp;</p>
-Congratulations <%= request.getParameter("username") %>, welcome to the Member's Page! 
+Congratulations <%= session.getAttribute("username") %>, welcome to the Member's Page! 
 </body>
 </html>

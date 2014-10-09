@@ -22,7 +22,7 @@ a {
   </tr>
   <tr style="margin: 0">
     <td align="center" valign="top"><p>
-    <form action="checklogin.jsp" name="mainform" method="post">
+    <form action=Login name="mainform">
 <!--     	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="checklogin.jsp">Login</a> -->
 <!-- 		<p>&nbsp;</p> -->
 <!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="register" href="#">Register</a> -->
