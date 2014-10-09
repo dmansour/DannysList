@@ -30,7 +30,7 @@ public class ConnectionManager {
          
          try
          {            	
-            con = DriverManager.getConnection(url,"admin","myxispsych0"); 
+            con = DriverManager.getConnection(url,"admin","password"); 
              								
          // assuming your SQL Server's	username is "username"               
          // and password is "password"
