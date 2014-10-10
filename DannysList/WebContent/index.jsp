@@ -43,7 +43,7 @@ a {
   		<!-- http://met.guc.edu.eg/OnlineTutorials/JSP%20-%20Servlets/Full%20Login%20Example.aspx -->
 
   		<input type="submit" class="btn btn-primary btn-default" style="width:100px" id="login" value="Login" ></input>
-		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="registration.jsp">Register</a>
+		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="NewUser">Register</a>
 	</div>
 	</form>
 	</td>
