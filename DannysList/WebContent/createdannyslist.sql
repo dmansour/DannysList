@@ -12,7 +12,7 @@ INSERT INTO users (username, password) VALUES ("testuser", "testpassword");
 
 /*
  *AFL
- *Adding a new tables for testing view builder.
+ *Adding new tables for testing view builder.
  *Questions
  *Email		: Aflynch@gmail.com
  *Phone 	: 678 900 6694

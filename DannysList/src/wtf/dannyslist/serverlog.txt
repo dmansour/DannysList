@@ -1,0 +1,17 @@
+This file holds data about the server and has history of work done on the server. 
+This file is maintained by Andrew F. Lynch, AKA AFL, AKA Johnny.
+
+-----------Server-------------
+
+OS Ubuntu	: 14.04
+Web server	: Tomcat7 
+Domain		: http://dannyslist.wtf:8080/DannysList/
+/*Domain will later be changed to dannyslist.wtf */
+
+------Server Work Log---------
+
+In stalled		:Ubuntu 14.04 
+Set up user		:Johnny 
+Changed long-in	:Enable password long-in
+In stalled 		:Tomcat7
+Added WAR		:Added Dannylist WAR file. Restarted Tomcat7
