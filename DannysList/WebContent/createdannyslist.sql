@@ -1,3 +1,14 @@
+/*
+ * Please try to keep the FinalStaticDatabaseInfo class up today with the live MySql database. 
+ * E.g. if you add, remove, or change something do the same thing to the FinalStaticDatabaseInfo class 
+ * found in /src/wtf/dannyslist/. 
+ * 
+ * If you don't feel like doing then just please tell me ,Johnny ,you change the database and I will
+ * updata the FinalStaticDatabaseInfo class. 
+ * 
+ * Thank you 
+ */
+
 DROP DATABASE IF EXISTS dannyslist;
 CREATE DATABASE dannyslist;
 

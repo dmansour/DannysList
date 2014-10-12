@@ -10,13 +10,14 @@ Domain		: http://dannyslist.wtf:8080/
 
 ------Server Work Log---------
 
-In stalled		:Ubuntu 14.04 
+Installed		:Ubuntu 14.04 
 Set up user		:Johnny 
 Changed long-in	:Enable password long-in
 In stalled 		:Tomcat7
 Added WAR		:Added DannyList WAR file. Restarted Tomcat7
 Root Domain		:Changed root domain to http://dannyslist.wtf:8080/
 /* Root Domain was http://dannyslist.wtf:8080/DannysList/  */
+Installed 		:mysql-server
 
 
 /*
