@@ -21,7 +21,6 @@ public class ConnectionManager {
       {
          String url = "jdbc:mysql:" + "//localhost:3306/dannyslist"; 
          // assuming "DataSource" is your DataSource name
-
          
          Class driver_class = Class.forName("com.mysql.jdbc.Driver");
          Driver driver = (Driver) driver_class.newInstance();
@@ -31,6 +30,12 @@ public class ConnectionManager {
          try
          {            	
             con = DriverManager.getConnection(url,"admin","password"); 
+            
+            if(con == null){
+            	System.out.println("Connection is null");
+            }else{
+            	System.out.println("Connection is not null :D");
+            }
              								
          // assuming your SQL Server's	username is "username"               
          // and password is "password"
