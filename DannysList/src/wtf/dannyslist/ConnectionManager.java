@@ -29,14 +29,11 @@ public class ConnectionManager {
          
          try
          {            	
-            con = DriverManager.getConnection(url,"admin","password"); 
+            con = DriverManager.getConnection(url,FinalStaticLoginInfo.userNameString,FinalStaticLoginInfo.passwordSting); 
             
             if(con == null){
             	System.out.println("Connection is null");
-            }else{
-            	System.out.println("Connection is not null :D");
-            }
-             								
+            }							
          // assuming your SQL Server's	username is "username"               
          // and password is "password"
               
