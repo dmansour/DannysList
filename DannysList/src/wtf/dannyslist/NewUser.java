@@ -39,7 +39,7 @@ public class NewUser extends HttpServlet {
 
 			HttpSession session = request.getSession(true);
 			session.setAttribute("username", user.getUsername());
-			response.sendRedirect("memberpage.jsp"); // logged-in page
+			response.sendRedirect("Search.jsp"); // logged-in page
 		}
 
 		catch (Throwable theException) {
