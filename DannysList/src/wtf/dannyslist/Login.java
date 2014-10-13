@@ -1,6 +1,7 @@
 package wtf.dannyslist;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,14 +26,10 @@ public class Login extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try
 		{	    
-
 		     UserBean user = new UserBean();
 		     user.setUsername(request.getParameter("username"));
 		     user.setPassword(request.getParameter("password"));
@@ -44,7 +41,39 @@ public class Login extends HttpServlet {
 			        
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("username", user.getUsername()); 
-		          response.sendRedirect("memberpage.jsp"); //logged-in page      		
+		          response.sendRedirect("Search.jsp"); //logged-in page      		
+		     }
+			        
+		     else 
+		          response.sendRedirect("index.jsp"); //error page 
+		} 
+				
+				
+		catch (Throwable theException) 	    
+		{
+		     System.out.println(theException); 
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try
+		{	    
+		     UserBean user = new UserBean();
+		     user.setUsername(request.getParameter("username"));
+		     user.setPassword(request.getParameter("password"));
+
+		     user = UserDAO.login(user);
+			   		    
+		     if (user.isValid())
+		     {
+			        
+		          HttpSession session = request.getSession(true);	    
+		          session.setAttribute("username", user.getUsername()); 
+		          response.sendRedirect("Search.jsp"); //logged-in page      		
 		     }
 			        
 		     else 

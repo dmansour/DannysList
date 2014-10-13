@@ -2,7 +2,12 @@ package wtf.dannyslist;
 
 import java.io.Serializable;
 
-
+/**GameBean 
+ * This class is an object representation of a game that is also a java been
+ * 
+ * @author Aflynch
+ *
+ */
 public class GameBean implements Serializable {
 	private String nameString , platformIDInt, gengreString;
 	private int yearInt;

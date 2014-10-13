@@ -3,12 +3,28 @@ package wtf.dannyslist;
 import java.text.*;
 import java.util.*;
 import java.sql.*;
-
+/**GameDAO
+ * This class helps with database access related to the Game table. 
+ * @author Aflynch
+ *
+ */
 public class GameDAO {
 	static Connection currentCon = null;
 	static ResultSet rs = null;
 	
-	public static ArrayList<GameBean> findGame(ArrayList<GameBean> gameBeanArrayList, GameBean gameBean){
+	/**findGame
+	 * This method searches for games with the same name as the name 
+	 * given to in the GameBean object that is passed into this method as
+	 * an argument. 
+	 * 
+	 * @param gameBeanArrayList
+	 * This variable acts as a pointer to the ArrayList<GameBean> that will hold the 
+	 * result of the search.
+ 	 * @param gameBean
+ 	 * This variable holds the name of the game that will be searched for.
+	 * @return void 
+	 */
+	public static void findGame(ArrayList<GameBean> gameBeanArrayList, GameBean gameBean){
 			String queryString = "SELECT "
 			+FinalStaticDatabaseInfo.Games.name +" , "
 			+ FinalStaticDatabaseInfo.Games.genres + " , " 
@@ -33,7 +49,6 @@ public class GameDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return gameBeanArrayList;
 		
 	}
 }
