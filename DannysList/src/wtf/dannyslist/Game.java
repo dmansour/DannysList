@@ -29,6 +29,18 @@ public class Game {
 		return title;
 	}
 	
+	public String getGuid() {
+		return guid;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
 	public String gamePrice() {
 		String price = description.substring(description.indexOf("Price") + 11, description.indexOf("<b>ETA:</b>")-1);
 		
