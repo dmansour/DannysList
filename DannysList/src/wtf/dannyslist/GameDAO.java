@@ -27,7 +27,7 @@ public class GameDAO {
 	public static void findGame(ArrayList<GameBean> gameBeanArrayList, GameBean gameBean){
 			String queryString = "SELECT "
 			+FinalStaticDatabaseInfo.Games.name +" , "
-			+ FinalStaticDatabaseInfo.Games.genres + " , " 
+			+ FinalStaticDatabaseInfo.Games.link + " , " 
 			+ FinalStaticDatabaseInfo.Games.year + " , "
 			+ FinalStaticDatabaseInfo.Games.cost + " "
 			+ " FROM "+FinalStaticDatabaseInfo.games_table+ 
@@ -40,7 +40,7 @@ public class GameDAO {
 			while(resultSet.next()){
 				GameBean resultGameBean = new GameBean();
 				resultGameBean.setNameString(resultSet.getString(FinalStaticDatabaseInfo.Games.name));
-				resultGameBean.setGengreString(resultSet.getString(FinalStaticDatabaseInfo.Games.genres));
+				resultGameBean.setLinkString(resultSet.getString(FinalStaticDatabaseInfo.Games.link));
 				resultGameBean.setYearInt(Integer.parseInt(resultSet.getString(FinalStaticDatabaseInfo.Games.year)));
 				resultGameBean.setCostDouble(Double.parseDouble(resultSet.getString(FinalStaticDatabaseInfo.Games.cost)));
 				gameBeanArrayList.add(resultGameBean);
@@ -50,5 +50,25 @@ public class GameDAO {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public static void addGame(GameBean gameBean){
+		String game = gameBean.getNameString();
+		String link = gameBean.getLinkString();
+		int year = gameBean.getYearInt();
+		Double price = gameBean.getCostDouble();
+		
+		Statement stmt = null;
+		String insertQuery = "INSERT INTO games VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link +"')";
+		
+		Connection connection = ConnectionManager.getConnection();
+		
+		try {
+			stmt = connection.createStatement();
+			stmt.executeUpdate(insertQuery);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

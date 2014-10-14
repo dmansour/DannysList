@@ -19,8 +19,16 @@ public class ProcessGameXML {
 		List<Game> games = gs.getGames();
 		Iterator it = games.iterator();
 		while(it.hasNext()){
+			GameBean gb = new GameBean();
+			
 			Game game = (Game) it.next();
-			System.out.println(game.getTitle() + ": " + game.gamePrice().trim());
+			gb.setCostDouble(Double.parseDouble(game.gamePrice().trim().substring(1)));
+			gb.setLinkString(game.getLink());
+			gb.setPlatformIDInt("1");
+			gb.setNameString(game.getTitle());
+			gb.setYearInt(game.getYear());
+			GameDAO.addGame(gb);
+			//System.out.println(gb.getCostDouble());
 		}
 		
 		

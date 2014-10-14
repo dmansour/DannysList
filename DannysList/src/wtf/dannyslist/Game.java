@@ -40,6 +40,10 @@ public class Game {
 	public String getCategory() {
 		return category;
 	}
+	
+	public int getYear() {
+		return Integer.parseInt(pubDate.substring(12,16));
+	}
 
 	public String gamePrice() {
 		String price = description.substring(description.indexOf("Price") + 11, description.indexOf("<b>ETA:</b>")-1);

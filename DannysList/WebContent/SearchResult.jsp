@@ -26,7 +26,7 @@ Search Results
 		if (gameBeanArrayList.size() > 0){
 			for(GameBean gameBean: gameBeanArrayList){
 				out.println("Game Name : "+gameBean.getNameString() + "<br>");
-				out.println("Gengre : "+gameBean.getGengreString()+ "<br>");
+				out.println("Link : <a href=\""+gameBean.getLinkString()+ "\" target=\"_blank\">buy it here</a><br>");
 				out.println("Year : "+gameBean.getYearInt()+ "<br>");
 				out.println("Cost : $"+gameBean.getCostDouble()+ "<br><br>");
 			}
@@ -35,6 +35,7 @@ Search Results
 		}
 
     %>
+    
 <!-- Congratulations <%= session.getAttribute("username") %>, welcome to the Member's Page! 
 -->
 </body>

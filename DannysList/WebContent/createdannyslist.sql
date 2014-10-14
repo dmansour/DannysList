@@ -35,18 +35,21 @@ CREATE TABLE Platforms(
 );
 	
 CREATE TABLE Games(
-	name VARCHAR(30) PRIMARY KEY UNIQUE,
+	name VARCHAR(150) PRIMARY KEY UNIQUE,
 	platform_id int NOT NULL,
-	genres VARCHAR(30) NOT NULL,
 	year INT NOT NULL,
 	cost DOUBLE NOT NULL,
+	link VARCHAR(150) NOT NULL,
 	FOREIGN KEY (platform_id) REFERENCES Platforms(platform_id)
 );
 
 INSERT INTO Platforms (platform) VALUES ("N46");
-INSERT INTO Platforms (platform) VALUES ("Playstation");
+INSERT INTO Platforms (platform) VALUES ("Playstation 3");
+INSERT INTO Platforms (platform) VALUES ("Playstation 4");
+INSERT INTO Platforms (platform) VALUES ("Xbox 360");
+INSERT INTO Platforms (platform) VALUES ("Xbox One");
 
-INSERT INTO games ( name, platform_id, genres, year, cost) VALUES ("Dr. Im", 1 , "Puzzle", 1981, 65000.00);
+INSERT INTO games ( name, platform_id, link, year, cost) VALUES ("Dr. Im", 1 , "http://tacksoo.github.io", 1981, 65000.00);
 /*
  *AFL
  *End of changes for testing view builder.

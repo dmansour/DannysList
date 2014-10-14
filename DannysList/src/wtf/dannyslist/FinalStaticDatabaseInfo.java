@@ -26,7 +26,7 @@ public class FinalStaticDatabaseInfo {
 	class Games{
 		final static String name = "name";
 		final static String platformID = "platform_id";
-		final static String genres = "genres";
+		final static String link = "link";
 		final static String year = "year";
 		final static String cost = "cost";
 	}

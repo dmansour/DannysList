@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  */
 public class GameBean implements Serializable {
-	private String nameString , platformIDInt, gengreString;
+	private String nameString , platformIDInt, linkString;
 	private int yearInt;
 	private double costDouble;
 	public String getNameString() {
@@ -24,11 +24,11 @@ public class GameBean implements Serializable {
 	public void setPlatformIDInt(String platformIDInt) {
 		this.platformIDInt = platformIDInt;
 	}
-	public String getGengreString() {
-		return gengreString;
+	public String getLinkString() {
+		return linkString;
 	}
-	public void setGengreString(String gengreString) {
-		this.gengreString = gengreString;
+	public void setLinkString(String linkString) {
+		this.linkString = linkString;
 	}
 	public int getYearInt() {
 		return yearInt;
