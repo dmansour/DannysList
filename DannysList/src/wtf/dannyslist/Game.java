@@ -28,5 +28,11 @@ public class Game {
 	public String getTitle() {
 		return title;
 	}
+	
+	public String gamePrice() {
+		String price = description.substring(description.indexOf("Price") + 11, description.indexOf("<b>ETA:</b>")-1);
+		
+		return price;
+	}
 
 }

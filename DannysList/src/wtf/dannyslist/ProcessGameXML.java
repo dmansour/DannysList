@@ -1,8 +1,8 @@
 package wtf.dannyslist;
 
 import java.io.File;
+import java.util.Iterator;
 import java.util.List;
- 
 
 import com.thoughtworks.xstream.XStream;
 
@@ -17,9 +17,13 @@ public class ProcessGameXML {
 		GameList gs = (GameList) obj;
 		
 		List<Game> games = gs.getGames();
-		Game game1 = games.get(1);
+		Iterator it = games.iterator();
+		while(it.hasNext()){
+			Game game = (Game) it.next();
+			System.out.println(game.getTitle() + ": " + game.gamePrice().trim());
+		}
 		
-		System.out.println(game1.getTitle());
+		
 	}
 
 }
