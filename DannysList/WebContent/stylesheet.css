@@ -1,0 +1,22 @@
+a {
+
+	text-decoraton: none;
+	color:#F96;
+	
+}
+a:hover {
+
+	color: gold
+
+}
+
+.navButton {
+
+	background-color: #000080
+
+}
+.navButton:hover {
+	
+	background-color: #2222a0
+	
+}
