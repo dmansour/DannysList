@@ -38,8 +38,8 @@ a:hover {
 <tr>
 <td style="width:40%;  background-color: navy; color:#efefef">Danny's List</td>
 <td class="searchField" style="background-color: #000080; width:10%; color:#efefef; padding:0px; text-align:center"><a href="#">
-	<form href="searchengine.html" method="post">
-		<input type="text" placeholder="Search Games" style="text-align: center"></input>
+	<form action="SearchEngine" method="get">
+		<input type="text" name="name" placeholder="Search Games" style="text-align: center"></input>
 		<input type="submit" style="width:0px; height:0px; border:0px; padding:0px"></input>
 	</form>
 </td>
