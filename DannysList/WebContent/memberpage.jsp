@@ -38,9 +38,13 @@ a:hover {
 <tr>
 <td style="width:40%;  background-color: navy; color:#efefef">Danny's List</td>
 <td class="searchField" style="background-color: #000080; width:10%; color:#efefef; padding:0px; text-align:center"><a href="#">
-	<input type="text" placeholder="Search Games" style="text-align: center"></input></a></td>
+	<form href="searchengine.html" method="post">
+		<input type="text" placeholder="Search Games" style="text-align: center"></input>
+		<input type="submit" style="width:0px; height:0px; border:0px; padding:0px"></input>
+	</form>
+</td>
 <td style="width:2%l; background-color:navy; color:#efefef; padding:0px; text-align:center">|</td>
-<td class="navButton" style="width:10%l; color:#efefef; margin:0px; text-align:center"><a href="#">Home</a></td>
+<td class="navButton" style="width:10%l; color:#efefef; margin:0px; text-align:center">Home</td>
 <td style="width:2%l; background-color:navy; color:#efefef; padding:0px; text-align:center">|</td>
 <td class="navButton" style="width:10%l; color:#efefef; margin:0px; text-align:center"><a href="#">About</a></td>
 <td style="width:2%l; background-color:navy; color:#efefef; padding:0px; text-align:center">|</td>
