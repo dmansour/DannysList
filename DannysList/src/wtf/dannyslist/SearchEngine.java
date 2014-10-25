@@ -45,7 +45,7 @@ public class SearchEngine extends HttpServlet {
 					gameBeanArrayList);
 			response.sendRedirect("SearchResult.jsp");
 		} else {
-			request.getSession().setAttribute("gameBeanArrayList", null);
+			request.getSession().setAttribute("gameBeanArrayList", gameBeanArrayList);
 			response.sendRedirect("GetWalmartSearch");
 		}
 		
