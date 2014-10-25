@@ -11,7 +11,7 @@ public class FinalStaticDatabaseInfo {
 	final static String database = "dannyslist";
 	final static String users_table = "Users";
 	final static String platforms_table = "Platforms";
-	final static String games_table = "games";
+	final static String games_table = "Games";
 	
 	class UsersTable{
 		final static String username = "username";

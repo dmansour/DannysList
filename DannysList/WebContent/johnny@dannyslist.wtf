@@ -19,7 +19,7 @@ CREATE TABLE users (
 	password VARCHAR(30) NOT NULL
 );
 
-INSERT INTO Users (username, password) VALUES ("testuser", "testpassword");
+INSERT INTO users (username, password) VALUES ("testuser", "testpassword");
 
 /*
  *AFL
@@ -43,22 +43,13 @@ CREATE TABLE Games(
 	FOREIGN KEY (platform_id) REFERENCES Platforms(platform_id)
 );
 
-CREATE TABLE Searches(
-	search_id INT NOT NULL AUTO_INCREMENT,
-	username VARCHAR(30),
-	search VARCHAR(30) NOT NULL,
-	PRIMARY KEY(search_id),
-	FOREIGN KEY (username) REFERENCES users(username)
-);
-
 INSERT INTO Platforms (platform) VALUES ("N46");
 INSERT INTO Platforms (platform) VALUES ("Playstation 3");
 INSERT INTO Platforms (platform) VALUES ("Playstation 4");
 INSERT INTO Platforms (platform) VALUES ("Xbox 360");
 INSERT INTO Platforms (platform) VALUES ("Xbox One");
-INSERT INTO Searches (username , search) VALUES ("testuser", "pokemon gold" );
-INSERT INTO Games ( name, platform_id, link, year, cost) VALUES ("Dr. Im", 1 , "http://tacksoo.github.io", 1981, 65000.00);
 
+INSERT INTO games ( name, platform_id, link, year, cost) VALUES ("Dr. Im", 1 , "http://tacksoo.github.io", 1981, 65000.00);
 /*
  *AFL
  *End of changes for testing view builder.

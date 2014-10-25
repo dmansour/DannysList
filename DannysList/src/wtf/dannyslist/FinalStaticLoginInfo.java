@@ -1,6 +1,6 @@
 package wtf.dannyslist;
 
 public class FinalStaticLoginInfo {
-	final static String userNameString = "admin";
-	final static String passwordSting = "password";
+	final static String userNameString = "root";
+	final static String passwordSting = "16140313";
 }
