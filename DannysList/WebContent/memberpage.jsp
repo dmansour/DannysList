@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<!--  <link type="text/css" rel="stylesheet" href="stylesheet.css">  -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>DannysList Portal</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
 <style>
 
  a {
@@ -20,16 +21,16 @@ a:hover {
 
 .navButton {
 
-	background-color: #000080
+	background-color: #4040a0
 
 }
 .navButton:hover {
 	
-	background-color: #2222a0
+	background-color: #4040a0
 	
 } 
 
-</style>
+</style> 
 </head>
 <body style="background-color: #efefef; background-image: url('Naer_Wallpaper_by_Gravideo_Interactive.jpg');
     background-repeat: no-repeat; background-attachment:fixed; background-position: center">
@@ -37,9 +38,9 @@ a:hover {
 <table style="margin:auto; width:1024px; border-spacing:0px">
 <tr>
 <td style="width:40%;  background-color: navy; color:#efefef">Danny's List</td>
-<td class="searchField" style="background-color: #000080; width:10%; color:#efefef; padding:0px; text-align:center"><a href="#">
+<td class="searchField" style="background-color: #4040a0; width:10%; color:#efefef; padding:0px; text-align:center"><a href="#">
 	<form action="SearchEngine" method="get">
-		<input type="text" name="name" placeholder="Search Games" style="text-align: center"></input>
+  		<input  class="form-control" type="text" style="text-align: center; width: 150px" name="name" placeholder="Search Games"></input>
 		<input type="submit" style="width:0px; height:0px; border:0px; padding:0px"></input>
 	</form>
 </td>
