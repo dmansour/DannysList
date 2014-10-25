@@ -20,33 +20,44 @@ import com.sun.xml.internal.ws.api.policy.PolicyResolver.ServerContext;
 @WebServlet("/")
 public class SearchEngine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public SearchEngine() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public SearchEngine() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		String nameString = request.getParameter("name");
 		ArrayList<GameBean> gameBeanArrayList = new ArrayList<GameBean>();
 		GameBean gameBean = new GameBean();
 		gameBean.setNameString(nameString);
 		GameDAO.findGame(gameBeanArrayList, gameBean);
-		request.getSession().setAttribute("gameBeanArrayList", gameBeanArrayList);
-		response.sendRedirect("SearchResult.jsp");
+		if (gameBeanArrayList.size() > 0) {
+			request.getSession().setAttribute("gameBeanArrayList",
+					gameBeanArrayList);
+			response.sendRedirect("SearchResult.jsp");
+		} else {
+			request.getSession().setAttribute("gameBeanArrayList", null);
+			response.sendRedirect("GetWalmartSearch");
+		}
 		
+
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 	}
 
 }
