@@ -34,12 +34,14 @@ public class NewUser extends HttpServlet {
 			UserBean user = new UserBean();
 			user.setUsername(request.getParameter("username"));
 			user.setPassword(request.getParameter("password"));
-
+			if(user.getPassword().matches("") || user.getUsername().matches("")){
+				response.sendRedirect("registration.jsp");
+			} else {
 			user = UserDAO.createUser(user);
-
 			HttpSession session = request.getSession(true);
 			session.setAttribute("username", user.getUsername());
 			response.sendRedirect("Search.jsp"); // logged-in page
+			}
 		}
 
 		catch (Throwable theException) {
