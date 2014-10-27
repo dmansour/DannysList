@@ -1,2 +1,5 @@
-/bin
-/target
+Thumbs.db
+FinalStaticLoginInfo.java
+DannysList/.classpath
+DannysList/target/*
+
