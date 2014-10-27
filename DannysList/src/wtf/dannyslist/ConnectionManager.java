@@ -29,7 +29,7 @@ public class ConnectionManager {
          
          try
          {            	
-            con = DriverManager.getConnection(url,FinalStaticLoginInfo.userNameString,FinalStaticLoginInfo.passwordString); 
+            con = DriverManager.getConnection(url,FinalStaticLoginInfo.userNameString,FinalStaticLoginInfo.passwordSting); 
             
             if(con == null){
             	System.out.println("Connection is null");

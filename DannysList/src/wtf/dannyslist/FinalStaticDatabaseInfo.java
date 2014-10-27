@@ -12,13 +12,6 @@ public class FinalStaticDatabaseInfo {
 	final static String users_table = "Users";
 	final static String platforms_table = "Platforms";
 	final static String games_table = "Games";
-	final static String search_table = "Search";
-	
-	class SearchTable{
-		final static String search_id = "search_id";
-		final static String username = "username";
-		final static String search = "search";	
-	}
 	
 	class UsersTable{
 		final static String username = "username";
