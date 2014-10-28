@@ -18,9 +18,9 @@
         <li style="width: 150px"><a href="#" ><font color="#428bca">About</font></a>
         <li style="width: 150px"><a href="#"><font color="#428bca">Credits</font></a>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left" role="search" action="GetWalmartSearch">
         <div class="form-group">
-          <input style="width:445px" text" class="form-control" placeholder="Search For Game...">
+          <input style="width:445px" text" class="form-control" placeholder="Search For Game..." name="search" id="search">
         </div>
         <button type="submit" class="btn btn-primary">Search</button>
       </form>
