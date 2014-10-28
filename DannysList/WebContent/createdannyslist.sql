@@ -39,7 +39,7 @@ CREATE TABLE Games(
 	platform_id int NOT NULL,
 	year INT NOT NULL,
 	cost DOUBLE NOT NULL,
-	link VARCHAR(150) NOT NULL,
+	link VARCHAR(500) NOT NULL,
 	FOREIGN KEY (platform_id) REFERENCES Platforms(platform_id)
 );
 
