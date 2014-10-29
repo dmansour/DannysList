@@ -31,4 +31,5 @@ this displays the name of current user (such as root@locahost)
 
 type set password for 'root'@'localhost' = password('new password');
 now your password has been changed.
+
 ---
