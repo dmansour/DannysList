@@ -19,7 +19,9 @@ Ahem...
 
 TAG!!
 
+
 ---
+<pre>
 Solution found here: http://dev.mysql.com/doc/refman/5.0/en/set-password.html
 
 To change your mysql password do the following.
@@ -31,5 +33,5 @@ this displays the name of current user (such as root@locahost)
 
 type set password for 'root'@'localhost' = password('new password');
 now your password has been changed.
-
+</pre>
 ---
