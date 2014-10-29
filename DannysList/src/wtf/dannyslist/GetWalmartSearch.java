@@ -1,11 +1,25 @@
 package wtf.dannyslist;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.thoughtworks.xstream.XStream;
 
 /**
  * Servlet implementation class GetWalmartSearch
@@ -26,7 +40,53 @@ public class GetWalmartSearch extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("SearchResult.jsp");
+		Scanner scanner = null;
+		HttpURLConnection conn = null;
+		String whattosearch = request.getParameter("search");
+		String safestring = whattosearch.replaceAll("\\s", "+");
+		HttpSession session = request.getSession(true);	    
+		String currUser = (String) session.getAttribute("username");
+		URL url = new URL("http://walmartlabs.api.mashery.com/v1/search?query=" + safestring +"&format=xml&apiKey=uj8kf4z6aa83gb9dgs6tdmj2");
+		StringBuilder jsonSB = new StringBuilder();
+		conn = (HttpURLConnection) url.openConnection();
+		InputStream in = new BufferedInputStream(conn.getInputStream());
+		scanner = new Scanner(in);
+		while (scanner.hasNext()) jsonSB.append(scanner.nextLine());
+		File file = new File(currUser + "_walmartsearch.xml");
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		System.out.println(file.getAbsolutePath());
+		session.setAttribute(currUser + "walmart_search", file.getAbsolutePath());
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(jsonSB.toString());
+		scanner.close();
+		conn.disconnect();
+		bw.close();
+		
+		XStream xstream = new XStream();
+		xstream.processAnnotations(WalmartSearchResponse.class);
+		
+		Object obj = xstream.fromXML(new File(file.getAbsolutePath()));
+		
+		WalmartSearchResponse wsr = (WalmartSearchResponse) obj;
+		WalmartResponseItems wri = wsr.getItemsList();
+		List<WalmartGame> lwg = wri.getWalmartList();
+		
+		Iterator it = lwg.iterator();
+		while(it.hasNext()){
+			GameBean gb = new GameBean();
+			
+			WalmartGame wgame = (WalmartGame) it.next();
+			gb.setCostDouble(wgame.getSalePrice());
+			gb.setLinkString(wgame.getProductUrl());
+			gb.setPlatformIDInt("1");
+			gb.setNameString(wgame.getName());
+			gb.setYearInt(2014);
+			GameDAO.addGame(gb);
+			//System.out.println(gb.getCostDouble());
+		}
+		
+		
+		response.sendRedirect("searchpage.jsp");
 	}
 
 	/**

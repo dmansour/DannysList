@@ -73,7 +73,7 @@ public class Login extends HttpServlet {
 			        
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("username", user.getUsername()); 
-		          response.sendRedirect("Search.jsp"); //logged-in page      		
+		          response.sendRedirect("searchpage.jsp"); //logged-in page      		
 		     }
 			        
 		     else 
