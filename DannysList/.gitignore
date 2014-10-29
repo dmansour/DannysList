@@ -4,3 +4,4 @@ DannysList/.classpath
 DannysList/target/*
 
 /target
+/bin
