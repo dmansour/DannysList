@@ -7,10 +7,8 @@
 </head>
 <style>
 a {
-
 	text-decoraton: none;
 	color:#F96;
-	
 }
 </style>
 <body style="background-color: #efefef; background-image: url('Naer_Wallpaper_by_Gravideo_Interactive.jpg');

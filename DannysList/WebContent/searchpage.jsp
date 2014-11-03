@@ -12,7 +12,7 @@
       	<li><a class="navbar-brand" href="#"><font color="#428bca">DannysList</font></a></li>
         <li style="width: 150px"><a href="#"><font color="#428bca">Home</font></a></li>
         <li style="width: 150px"><a href="#"><font color="#428bca">Search</font></a></li>
-        <li style="width: 150px"><a href="#" ><font color="#428bca">About</font></a>
+        <li style="width: 150px"><a href="/DannysList/about.jsp" ><font color="#428bca">About</font></a>
         <li style="width: 150px"><a href="#"><font color="#428bca">Credits</font></a>
         <li>
         <form class="navbar-form navbar-right" role="search" action="GetWalmartSearch">
