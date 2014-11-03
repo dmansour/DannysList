@@ -1,54 +1,104 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<title>DannysList</title>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DannysList Portal</title>
-<style>
-a {
-
-	text-decoraton: none;
-	color:#F96;
-	
-}
-</style>
+<!-- 	<ul class="nav nav-pills" role="tablist" style="background-color:#FFF; padding-top:5px; padding-bottom:5px"> -->
+<!-- 		<li style="padding-left: 15px"><a class="navbar-brand" href="#"><font color="#428bca">DannysList</font></a></li> -->
+<!-- 		<li role="presentation" style="border-style: solid; border-width: 1px"><a href="#">Home</a></li> -->
+<!-- 		<li role="presentation" style="border-style: solid; border-width: 1px"><a href="#">Search</a></li> -->
+<!-- 		<li role="presentation"><a href="#">About</a></li> -->
+<!-- 		<li role="presentation"><a href="#">Credits</a></li> -->
+<!-- 		<li role="presentation" style="float: right; padding-right:15px"><a href="#">Register</a></li> -->
+<!-- 		<li role="presentation" style="float: right"><a href="#">Login</a></li> -->
+<!-- 	</ul> -->
 </head>
-
-<body style="background-color: #ffffff; background-image: url('Naer_Wallpaper_by_Gravideo_Interactive.jpg');
-    background-repeat: no-repeat; background-attachment:fixed; background-position: center">
-<p>&nbsp;</p>
-<table style="margin:0px auto; width:400px" align="center">
-  <tr>
-    <th width="33%" align="center" scope="row"><h2><center>Welcome To DannysList!</center></h2></th>
-  </tr>
-  <tr style="margin: 0">
-    <td align="center" valign="top"><p>
-    <form action="Login" name="mainform" method="post">
-<!--     	<a class="btn btn-primary btn-lg" style="width:200px" id="login" href="checklogin.jsp">Login</a> -->
-<!-- 		<p>&nbsp;</p> -->
-<!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="register" href="#">Register</a> -->
-<!-- 		<p>&nbsp;</p> -->
-<!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="credits" href="#">Credits</a> -->
-<!-- 		<p>&nbsp;</p> -->
-<!-- 		<a class="btn btn-primary btn-lg" style="width:200px" id="about" href="#">About</a> -->
-		<div class="input-group">
-		<span class="input-group-addon">Username:</span>
-  		<input type="text" class="form-control" name="username" id="username"><br />
+<body style="background-color: #efefef;">
+		<div class="jumbotron" style="background-color: #428bca; color: #FFF"; margin:0px">
+			
+		<div class="right-bar" style="float: right">
+			<a href="login.jsp" style="color: #FFF; padding: 30px">Login</a>
+			<a href="registration.jsp" style="color: #FFF; padding: 30px">Register</a>
+		</div>
+			<br /><br />
+  			<center><h1>Welcome To DannysList!</h1></center>
+  			<br />
+  			<center><p>This is sample text. The text will be added here later...</p></center>
   		</div>
-		<br />
-		<div class="input-group">
-		<span class="input-group-addon">Password:</span>
-  		<input type="password" class="form-control" name="password" id="password"><br />
-  		</div>
-  		<br />
-  		<!-- http://met.guc.edu.eg/OnlineTutorials/JSP%20-%20Servlets/Full%20Login%20Example.aspx -->
-
-  		<input type="submit" class="btn btn-primary btn-default" style="width:100px" id="login" value="Login" ></input>
-		<a class="btn btn-primary btn-default" style="width:100px" id="register" href="registration.jsp">Register</a>
-	</div>
-	</form>
-	</td>
-</tr>
-</table>
+  			<h2><center>Featured Games</center></h2>
+  			<p><center>Check out the latest games that have been added on our website below!</center></p>
+  			<br />
+  		<div class="row">
+  			<div class="col-md-4">
+				<table class="table table-bordered" style="margin-left: auto; margin-right: auto">
+					<tr style="background-color: #FFF; color: #428bca">
+						<th style="text-align: center">Walmart</th>
+					</tr>
+					<tr>
+						<td><center>Game 1</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 2</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 3</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 4</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 5</center></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="col-md-4">
+				<table class="table table-bordered" style="margin-left: auto; margin-right: auto">
+					<tr style="background-color: #FFF; color: #428bca">
+						<th style="text-align: center">GameStop</th>
+					</tr>
+					<tr>
+						<td><center>Game 1</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 2</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 3</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 4</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 5</center></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="col-md-4">
+				<table class="table table-bordered" style="margin-left: auto; margin-right: auto">
+					<tr style="background-color: #FFF; color: #428bca">
+						<th style="text-align: center">Other</th>
+					</tr>
+					<tr>
+						<td><center>Game 1</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 2</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 3</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 4</center></td>
+					</tr>
+					<tr>
+						<td><center>Game 5</center></td>
+					</tr>
+				</table>
+			</div>
+		</div>
 </body>
 </html>
