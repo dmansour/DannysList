@@ -14,7 +14,7 @@ a {
 </style>
 </head>
 
-<body style="background-color: #ffffff; background-image: url('Naer_Wallpaper_by_Gravideo_Interactive.jpg');
+<body style="background-color: #efefef; background-image: url('Naer_Wallpaper_by_Gravideo_Interactive.jpg');
     background-repeat: no-repeat; background-attachment:fixed; background-position: center">
 <p>&nbsp;</p>
 <table style="margin:0px auto; width:400px" align="center">
