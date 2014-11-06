@@ -52,7 +52,7 @@ public class GetWalmartSearch extends HttpServlet {
 		InputStream in = new BufferedInputStream(conn.getInputStream());
 		scanner = new Scanner(in);
 		while (scanner.hasNext()) jsonSB.append(scanner.nextLine());
-		File file = new File(currUser + "_walmartsearch.xml");
+		File file = new File("xmls\\" + currUser + "_walmartsearch.xml");
 		FileWriter fw = new FileWriter(file.getAbsoluteFile());
 		System.out.println(file.getAbsolutePath());
 		session.setAttribute(currUser + "walmart_search", file.getAbsolutePath());
