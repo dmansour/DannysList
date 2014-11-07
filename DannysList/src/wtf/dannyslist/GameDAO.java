@@ -52,6 +52,10 @@ public class GameDAO {
 		
 	}
 	
+	
+	/*
+	 * This method adds a game to the database
+	 */
 	public static void addGame(GameBean gameBean){
 		String game = gameBean.getNameString();
 		String link = gameBean.getLinkString();
