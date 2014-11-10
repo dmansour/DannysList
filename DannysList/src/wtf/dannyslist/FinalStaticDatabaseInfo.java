@@ -8,26 +8,26 @@ package wtf.dannyslist;
  *  Or for using your IDE to see quickly what tables and fields are in your database.
  */
 public class FinalStaticDatabaseInfo {
-	final static String database = "dannyslist";
-	final static String users_table = "Users";
-	final static String platforms_table = "Platforms";
-	final static String games_table = "Games";
+	public final static String database = "dannyslist";
+	public final static String users_table = "Users";
+	public final static String platforms_table = "Platforms";
+	public final static String games_table = "Games";
 	
-	class UsersTable{
-		final static String username = "username";
-		final static String password = "password";
+	public static class UsersTable{
+		public final static String username = "username";
+		public final static String password = "password";
 	}
 	
-	class Platforms{
-		final static String platformID = "platform_id";
-		final static String platform = "platform";
+	public static class Platforms{
+		public final static String platformID = "platform_id";
+		public final static String platform = "platform";
 	}
 	
-	class Games{
-		final static String name = "name";
-		final static String platformID = "platform_id";
-		final static String link = "link";
-		final static String year = "year";
-		final static String cost = "cost";
+	public static class Games{
+		public final static String name = "name";
+		public final static String platformID = "platform_id";
+		public final static String link = "link";
+		public final static String year = "year";
+		public final static String cost = "cost";
 	}
 }
