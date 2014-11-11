@@ -32,8 +32,9 @@
 				+ FinalStaticDatabaseInfo.Games.link + " , " 
 				+ FinalStaticDatabaseInfo.Games.year + " , "
 				+ FinalStaticDatabaseInfo.Games.cost + " "
-				+ " FROM "+FinalStaticDatabaseInfo.games_table + " ;";
-				//TODO: QUERY DATA LIMIT = 6
+				+ " FROM "+FinalStaticDatabaseInfo.games_table + 
+				" LIMIT " + " 5 " + " ;";
+				
 				
 		Statement statement = connection.createStatement();
 		
@@ -80,29 +81,9 @@
 						</center></td>
 						<td><center>
 							<% out.print(gameBeanArrayList.get(i).getLinkString()); %></center></td>
-						<td><center><% out.print(gameBeanArrayList.get(i).getCostDouble()); %></center></td>
+						<td><center><% out.print("$" + gameBeanArrayList.get(i).getCostDouble()); %></center></td>
 					</tr>
 					<%} %>
-					<tr>
-						<td><center>Game 2</center></td>
-						<td><center>Description 2</center></td>
-						<td><center>Price 2</center></td>
-					</tr>
-					<tr>
-						<td><center>Game 3</center></td>
-						<td><center>Description 3</center></td>
-						<td><center>Price 3</center></td>
-					</tr>
-					<tr>
-						<td><center>Game 4</center></td>
-						<td><center>Description 4</center></td>
-						<td><center>Price 4</center></td>
-					</tr>
-					<tr>
-						<td><center>Game 5</center></td>
-						<td><center>Description 5</center></td>
-						<td><center>Price 5</center></td>
-					</tr>
 				</table>
 			</div>
 <!-- 				<table class="table table-bordered" style="margin-left: auto; margin-right: auto"> -->
