@@ -9,8 +9,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <title>DannysList</title>
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"s></script>
-<script src="res/loader.jsp"></script>
 </head>
 
 <body style="background-color: #efefef;">
