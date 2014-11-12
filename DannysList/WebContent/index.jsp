@@ -15,7 +15,7 @@
 
 <body style="background-color: #efefef;">
 
-	<% 
+		<% 
 	
 		String queryString = "SELECT * FROM users";
 		Connection connection = ConnectionManager.getConnection();
@@ -27,7 +27,6 @@
 				+ FinalStaticDatabaseInfo.Games.cost + " "
 				+ " FROM "+FinalStaticDatabaseInfo.games_table + 
 				" LIMIT " + " 5 " + " ;";
-				
 				
 		Statement statement = connection.createStatement();
 		
@@ -47,10 +46,9 @@
 		%>
 
 	<div class="jumbotron" style="background-color: #428bca; color: #FFF"; margin:0px">
-
 		<div class="right-bar" style="float: right">
-			<a href="login.jsp" style="color: #FFF; padding: 30px">Login</a> <a
-				href="registration.jsp" style="color: #FFF; padding: 30px">Register</a>
+			<a href="login.jsp" style="color: #FFF; padding: 30px">Login</a> 
+			<a href="registration.jsp" style="color: #FFF; padding: 30px">Register</a>
 		</div>
 		<br />
 		<br />
@@ -59,15 +57,9 @@
 		</center>
 		<br />
 		<center>
-			<p>This is sample text. The text will be added here later...</p>
+			<p>Your Source for the Best Deals on Games!</p>
 		</center>
 	</div>
-	<h2>
-		<center>Awesome Deals!!!</center>
-	</h2>
-	<p>
-	<center>Check out the latest deals on our website below!</center>
-	</p>
 	<br />
 	<div class="index_table" style="width: 50%; margin: auto">
 		<table class="table table-bordered">
@@ -79,12 +71,10 @@
 			<% for (int i = 0; i < gameBeanArrayList.size(); i++) { %>
 			<tr>
 				<td><center>
-						<% out.print(gameBeanArrayList.get(i).getNameString()); %>
-					</center></td>
+						<a href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> " target="_blank"><% out.print(gameBeanArrayList.get(i).getNameString()); %>
+					</a></center></td>
 				<td><center>
-						<a
-							href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> ">Click
-							Me!</a>
+						<a href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> " target="_blank">Click Me!</a>
 					</center></td>
 				<td><center>
 						<% out.print("$" + gameBeanArrayList.get(i).getCostDouble()); %>
