@@ -9,15 +9,8 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <title>DannysList</title>
 <head>
-<!-- 	<ul class="nav nav-pills" role="tablist" style="background-color:#FFF; padding-top:5px; padding-bottom:5px"> -->
-<!-- 		<li style="padding-left: 15px"><a class="navbar-brand" href="#"><font color="#428bca">DannysList</font></a></li> -->
-<!-- 		<li role="presentation" style="border-style: solid; border-width: 1px"><a href="#">Home</a></li> -->
-<!-- 		<li role="presentation" style="border-style: solid; border-width: 1px"><a href="#">Search</a></li> -->
-<!-- 		<li role="presentation"><a href="#">About</a></li> -->
-<!-- 		<li role="presentation"><a href="#">Credits</a></li> -->
-<!-- 		<li role="presentation" style="float: right; padding-right:15px"><a href="#">Register</a></li> -->
-<!-- 		<li role="presentation" style="float: right"><a href="#">Login</a></li> -->
-<!-- 	</ul> -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"s></script>
+<script src="res/loader.jsp"></script>
 </head>
 
 <body style="background-color: #efefef;">

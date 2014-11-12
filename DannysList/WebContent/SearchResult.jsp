@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"s></script>
+<script src="res/loader.jsp"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>DannysList Portal</title>
 </head>

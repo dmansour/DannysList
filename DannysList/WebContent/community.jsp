@@ -16,7 +16,12 @@
 function myFunction() {
 	document.getElementById("demo").innerHTML = "New text!! ";
 	//document.getElementById("boss").innerHTML = "I guess you are a boss";
+	//document.body.style.backgroundImage="url('img_tree.png')";
+    document.body.style.backgroundImage = "url('//fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/13252_10152380142371957_7357100697285782264_n.jpg?oh=7d8ee6a5015af2dc2703ff2034974837&oe=54D8955F&__gda__=1424574306_1353a2ef34b87c9342b84c482a0c1a24')";
+	document.body.style.backgroundPosition="bottem left";
+	document.body.style.backgroundRepeat="no-repeat";
 
+	//http://fakeplus.com/pictures/jpg/-han-solo_20120522052247.jpg
 }
 </script>
 </body>

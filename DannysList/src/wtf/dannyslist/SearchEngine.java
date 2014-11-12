@@ -48,8 +48,6 @@ public class SearchEngine extends HttpServlet {
 			request.getSession().setAttribute("gameBeanArrayList", gameBeanArrayList);
 			response.sendRedirect("GetWalmartSearch");
 		}
-		
-
 	}
 
 	/**
