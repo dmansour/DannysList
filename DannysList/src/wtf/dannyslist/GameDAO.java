@@ -63,7 +63,8 @@ public class GameDAO {
 		Double price = gameBean.getCostDouble();
 		
 		Statement stmt = null;
-		String insertQuery = "INSERT INTO games VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link +"')";
+		
+		String insertQuery = "INSERT INTO Games (name, platform_id, year, cost, link) VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link +"')";
 		
 		Connection connection = ConnectionManager.getConnection();
 		
