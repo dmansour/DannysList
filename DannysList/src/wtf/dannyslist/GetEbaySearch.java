@@ -24,14 +24,14 @@ import com.thoughtworks.xstream.XStream;
 /**
  * Servlet implementation class GetWalmartSearch
  */
-@WebServlet("/GetWalmartSearch")
-public class GetWalmartSearch extends HttpServlet {
+@WebServlet("/GetEbaySearch")
+public class GetEbaySearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetWalmartSearch() {
+    public GetEbaySearch() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,52 +42,56 @@ public class GetWalmartSearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Scanner scanner = null;
 		HttpURLConnection conn = null;
-		String whattosearch = request.getParameter("search");
-		String safestring = whattosearch.replaceAll("\\s", "+");
-		HttpSession session = request.getSession(true);	    
+
+		HttpSession session = request.getSession(true);	 
+		String whattosearch = (String) session.getAttribute("searchterm");
+		String safestring = whattosearch.replaceAll("\\s", "%20");   
 		String currUser = (String) session.getAttribute("username");
-		URL url = new URL("http://walmartlabs.api.mashery.com/v1/search?query=" + safestring +"&format=xml&apiKey=uj8kf4z6aa83gb9dgs6tdmj2");
+		//URL url = new URL("http://walmartlabs.api.mashery.com/v1/search?query=" + safestring +"&format=xml&apiKey=uj8kf4z6aa83gb9dgs6tdmj2");
+		// Construct the request
+		// Replace MyAppID with your Production AppID
+		String eurl = "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=DannysLi-c6ed-490b-9aec-4082453768e5&GLOBAL-ID=EBAY-US&RESPONSE-DATA-FORMAT=XML&REST-PAYLOAD&keywords=" + safestring +"%20Video%20game&paginationInput.entriesPerPage=3&sortOrder=BestMatch";
+		URL url = new URL(eurl);
 		StringBuilder jsonSB = new StringBuilder();
 		conn = (HttpURLConnection) url.openConnection();
 		InputStream in = new BufferedInputStream(conn.getInputStream());
 		scanner = new Scanner(in);
 		while (scanner.hasNext()) jsonSB.append(scanner.nextLine());
-		File file = new File("xmls/" + currUser + "_walmartsearch.xml");
+		File file = new File("xmls/" + currUser + "_ebaysearch.xml");
 		FileWriter fw = new FileWriter(file.getAbsoluteFile());
 		System.out.println(file.getAbsolutePath());
-		session.setAttribute(currUser + "walmart_search", file.getAbsolutePath());
+		session.setAttribute(currUser + "ebay_search", file.getAbsolutePath());
 		BufferedWriter bw = new BufferedWriter(fw);
 		bw.write(jsonSB.toString());
 		scanner.close();
 		conn.disconnect();
 		bw.close();
 		
-		XStream xstream = new XStream();
-		xstream.processAnnotations(WalmartSearchResponse.class);
+//		XStream xstream = new XStream();
+//		xstream.processAnnotations(WalmartSearchResponse.class);
+//		
+//		Object obj = xstream.fromXML(new File(file.getAbsolutePath()));
+//		
+//		WalmartSearchResponse wsr = (WalmartSearchResponse) obj;
+//		WalmartResponseItems wri = wsr.getItemsList();
+//		List<WalmartGame> lwg = wri.getWalmartList();
+//		
+//		Iterator it = lwg.iterator();
+//		while(it.hasNext()){
+//			GameBean gb = new GameBean();
+//			
+//			WalmartGame wgame = (WalmartGame) it.next();
+//			gb.setCostDouble(wgame.getSalePrice());
+//			gb.setLinkString(wgame.getProductUrl());
+//			gb.setPlatformIDInt("1");
+//			gb.setNameString(wgame.getName());
+//			gb.setYearInt(2014);
+//			GameDAO.addGame(gb);
+//			//System.out.println(gb.getCostDouble());
+//		}
 		
-		Object obj = xstream.fromXML(new File(file.getAbsolutePath()));
 		
-		WalmartSearchResponse wsr = (WalmartSearchResponse) obj;
-		WalmartResponseItems wri = wsr.getItemsList();
-		List<WalmartGame> lwg = wri.getWalmartList();
-		
-		Iterator it = lwg.iterator();
-		while(it.hasNext()){
-			GameBean gb = new GameBean();
-			
-			WalmartGame wgame = (WalmartGame) it.next();
-			gb.setCostDouble(wgame.getSalePrice());
-			gb.setLinkString(wgame.getProductUrl());
-			gb.setPlatformIDInt("1");
-			gb.setNameString(wgame.getName());
-			gb.setYearInt(2014);
-			GameDAO.addGame(gb);
-			//System.out.println(gb.getCostDouble());
-		}
-		
-		session.setAttribute("searchterm", whattosearch);
-		//response.sendRedirect("searchpage.jsp");
-		response.sendRedirect("GetEbaySearch");
+		response.sendRedirect("searchpage.jsp");
 	}
 
 	/**
