@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page import="wtf.dannyslist.*"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,7 +17,7 @@
 <body style="background-color: #efefef;">
 
 		<% 
-	
+		DecimalFormat df = new DecimalFormat("###.##");
 		String queryString = "SELECT * FROM users";
 		Connection connection = ConnectionManager.getConnection();
 		
@@ -77,7 +78,7 @@
 						<a href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> " target="_blank">Click Me!</a>
 					</center></td>
 				<td><center>
-						<% out.print("$" + gameBeanArrayList.get(i).getCostDouble()); %>
+						<% out.print("$" + df.format(gameBeanArrayList.get(i).getCostDouble())); %>
 					</center></td>
 			</tr>
 			<%} %>
