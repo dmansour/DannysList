@@ -2,8 +2,10 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="java.text.DecimalFormat" %>
+<%@ page import="java.text.DecimalFormat"%>
 <%@ page import="wtf.dannyslist.*"%>
+<%@ page session="true"%>
+<%@ page import="javax.servlet.http.HttpSession" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,7 +18,7 @@
 
 <body style="background-color: #efefef;">
 
-		<% 
+	<% 
 		DecimalFormat df = new DecimalFormat("###.##");
 		String queryString = "SELECT * FROM users";
 		Connection connection = ConnectionManager.getConnection();
@@ -47,12 +49,24 @@
 		%>
 
 	<div class="jumbotron" style="background-color: #428bca; color: #FFF"; margin:0px">
-		<div class="right-bar" style="float: right">
-			<a href="login.jsp" style="color: #FFF; padding: 30px">Login</a> 
-			<a href="registration.jsp" style="color: #FFF; padding: 30px">Register</a>
-		</div>
-		<br />
-		<br />
+		<% 
+		   
+		   session = request.getSession(true);
+		   String logged = (String) session.getAttribute("username"); 
+		   System.out.println(logged);
+	   	   if (logged == null) {
+			  out.println("<div class=\"right-bar\" style=\"float: right\"> <a href=\"login.jsp\" style=\"color: #FFF; padding: 30px\">Login</a> <a href=\"registration.jsp\" style=\"color: #FFF; padding: 30px\">Register</a></div>");
+	   	   }
+	   	   else if (logged.equals("")) {
+				  out.println("<div class=\"right-bar\" style=\"float: right\"> <a href=\"login.jsp\" style=\"color: #FFF; padding: 30px\">Login</a> <a href=\"registration.jsp\" style=\"color: #FFF; padding: 30px\">Register</a></div>");
+	   	   }
+	   	   else {
+			  request.getSession().setAttribute("username", "");
+			  out.println("<div class=\"right-bar\" style=\"float: right\"><a href=\"index.jsp\" style=\"color: #FFF; padding: 30px\">Logout</a></div>");
+	  	   }
+		
+	%>
+		<br /> <br />
 		<center>
 			<h1>Welcome To DannysList!</h1>
 		</center>
@@ -72,10 +86,16 @@
 			<% for (int i = 0; i < gameBeanArrayList.size(); i++) { %>
 			<tr>
 				<td><center>
-						<a href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> " target="_blank"><% out.print(gameBeanArrayList.get(i).getNameString()); %>
-					</a></center></td>
+						<a
+							href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> "
+							target="_blank">
+							<% out.print(gameBeanArrayList.get(i).getNameString()); %>
+						</a>
+					</center></td>
 				<td><center>
-						<a href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> " target="_blank">Click Me!</a>
+						<a
+							href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> "
+							target="_blank">Click Me!</a>
 					</center></td>
 				<td><center>
 						<% out.print("$" + df.format(gameBeanArrayList.get(i).getCostDouble())); %>
