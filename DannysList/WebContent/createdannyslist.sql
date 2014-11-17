@@ -35,11 +35,14 @@ CREATE TABLE Platforms(
 );
 	
 CREATE TABLE Games(
+	newest_order INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(150) PRIMARY KEY UNIQUE,
 	platform_id int NOT NULL,
 	year INT NOT NULL,
 	cost DOUBLE NOT NULL,
 	link VARCHAR(500) NOT NULL,
+	source VARCHAR(50) NOT NULL,
+	search_term VARCHAR(500) NOT NULL,
 	FOREIGN KEY (platform_id) REFERENCES Platforms(platform_id)
 );
 
