@@ -17,7 +17,7 @@ public class CommentDAO {
 		
 		Statement stmt = null;
 		
-		String insertQuery = "INSERT INTO Comments (username, comment) VALUES ('" + usernameString + "','" + commentString +"');";
+		String insertQuery = "INSERT INTO "+FinalStaticDatabaseInfo.comments_table+" ("+FinalStaticDatabaseInfo.Comments.username+","+ FinalStaticDatabaseInfo.Comments.comment+") VALUES ('" + usernameString + "','" + commentString +"');";
 		
 		Connection connection = ConnectionManager.getConnection();
 		
@@ -36,7 +36,7 @@ public class CommentDAO {
 		+ FinalStaticDatabaseInfo.Comments.comment_id + ","
 		+ FinalStaticDatabaseInfo.Comments.username 
 		+ " FROM " 
-		+ FinalStaticDatabaseInfo.comments
+		+ FinalStaticDatabaseInfo.comments_table
 		+ ";";
 		
 		Connection connection = ConnectionManager.getConnection();

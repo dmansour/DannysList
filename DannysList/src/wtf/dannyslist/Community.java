@@ -20,7 +20,7 @@ public class Community extends HttpServlet{
 		//super.doGet(req, resp);
 		Statement stmt = null;	
 		
-		String insertQuery = "INSERT INTO comments (username, comment) VALUES ('" + req.getParameter("username") +"','"+ req.getParameter("comment") +"')";
+		String insertQuery = "INSERT INTO "+FinalStaticDatabaseInfo.comments_table+" ("+FinalStaticDatabaseInfo.Comments.username+", "+FinalStaticDatabaseInfo.Comments.comment+") VALUES ('" + req.getParameter("username") +"','"+ req.getParameter("comment") +"')";
 		
 		Connection connection = ConnectionManager.getConnection();
 		

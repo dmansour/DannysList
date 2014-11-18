@@ -14,7 +14,7 @@ CREATE DATABASE dannyslist;
 
 USE dannyslist;
 
-CREATE TABLE users (
+CREATE TABLE Users (
 	username VARCHAR(30) PRIMARY KEY UNIQUE,
 	password VARCHAR(30) NOT NULL
 );
@@ -52,7 +52,7 @@ CREATE TABLE Searches(
 	username VARCHAR(30),
 		search VARCHAR(30) NOT NULL,
 		PRIMARY KEY(search_id),
-	FOREIGN KEY (username) REFERENCES users(username)
+	FOREIGN KEY (username) REFERENCES Users(username)
 );
 
 CREATE TABLE Comments( 

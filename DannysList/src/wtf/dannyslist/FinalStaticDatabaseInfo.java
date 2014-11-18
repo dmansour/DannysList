@@ -12,9 +12,9 @@ public class FinalStaticDatabaseInfo {
 	public final static String users_table = "Users";
 	public final static String platforms_table = "Platforms";
 	public final static String games_table = "Games";
-	public final static String comments = "Comments";
+	public final static String comments_table = "Comments";
 	
-	public static class UsersTable{
+	public static class Users{
 		public final static String username = "username";
 		public final static String password = "password";
 	}
