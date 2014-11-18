@@ -61,10 +61,12 @@ public class GameDAO {
 		String link = gameBean.getLinkString();
 		int year = gameBean.getYearInt();
 		Double price = gameBean.getCostDouble();
+		String source = gameBean.getSource();
+		String search_term = gameBean.getSearchTerm();
 		
 		Statement stmt = null;
 		
-		String insertQuery = "INSERT INTO Games (name, platform_id, year, cost, link) VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link +"')";
+		String insertQuery = "INSERT INTO games (name, platform_id, year, cost, link, search_term, source) VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link + "','" + search_term + "','" + source +"')";
 		
 		Connection connection = ConnectionManager.getConnection();
 		

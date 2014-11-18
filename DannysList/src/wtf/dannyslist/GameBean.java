@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  */
 public class GameBean implements Serializable {
-	private String nameString , platformIDInt, linkString;
+	private String nameString , platformIDInt, linkString, source, search_term;
 	private int yearInt;
 	private double costDouble;
 	public String getNameString() {
@@ -41,5 +41,17 @@ public class GameBean implements Serializable {
 	}
 	public void setCostDouble(double costDouble) {
 		this.costDouble = costDouble;
+	}
+	public String getSource() {
+		return source;
+	}
+	public void setSource(String source) {
+		this.source = source;
+	}
+	public String getSearchTerm() {
+		return search_term;
+	}
+	public void setSearchTerm(String searchTerm) {
+		this.search_term = searchTerm;
 	}
 }

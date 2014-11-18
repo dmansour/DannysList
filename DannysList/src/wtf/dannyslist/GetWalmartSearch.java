@@ -81,6 +81,8 @@ public class GetWalmartSearch extends HttpServlet {
 			gb.setPlatformIDInt("1");
 			gb.setNameString(wgame.getName());
 			gb.setYearInt(2014);
+			gb.setSource("walmart");
+			gb.setSearchTerm(whattosearch);
 			GameDAO.addGame(gb);
 			//System.out.println(gb.getCostDouble());
 		}
