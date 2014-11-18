@@ -9,11 +9,11 @@
 <title>About Page</title>
 </head>
 <body style="background-color: #efefef;">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"s></script>
+<script src="res/loader.jsp"></script>
 <div id="header"></div>
-<script> 
-  $("#header").load("header.html");
-</script> 
+
 	<br />
 	<h2><center>About Page</center></h2>
 	<br />

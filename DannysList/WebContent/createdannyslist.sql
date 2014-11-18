@@ -36,21 +36,22 @@ CREATE TABLE Platforms(
 	
 CREATE TABLE Games(
 	newest_order INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(150) PRIMARY KEY UNIQUE,
+	name VARCHAR(150) UNIQUE,
 	platform_id int NOT NULL,
 	year INT NOT NULL,
 	cost DOUBLE NOT NULL,
 	link VARCHAR(500) NOT NULL,
 	source VARCHAR(50) NOT NULL,
 	search_term VARCHAR(500) NOT NULL,
+	PRIMARY KEY(newest_order),
 	FOREIGN KEY (platform_id) REFERENCES Platforms(platform_id)
 );
 
 CREATE TABLE Searches(
 	search_id INT NOT NULL AUTO_INCREMENT,
 	username VARCHAR(30),
-	search VARCHAR(30) NOT NULL,
-	PRIMARY KEY(search_id),
+		search VARCHAR(30) NOT NULL,
+		PRIMARY KEY(search_id),
 	FOREIGN KEY (username) REFERENCES users(username)
 );
 
