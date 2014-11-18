@@ -17,7 +17,7 @@ import com.sun.xml.internal.ws.api.policy.PolicyResolver.ServerContext;
 /**
  * Servlet implementation class SearchEngine
  */
-@WebServlet("/")
+@WebServlet("/SearchEngine")
 public class SearchEngine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

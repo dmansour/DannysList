@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="wtf.dannyslist.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,8 +9,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<button style="text-align: center" type="button" onClick="myFunction()">You should click me!!</button>
-<p id="demo" style="text-align: center">this is an awesome demo son!! <p>
+<p id="demo" style="text-align: center">Feel like you need to rant?? This is the place //TODO it.<p>
+<%
+	ArrayList<CommentBean> commentBeanArrayList = new ArrayList<CommentBean>();
+	CommentDAO.getAllComments(commentBeanArrayList);
+	for(CommentBean commentBean: commentBeanArrayList){
+		out.println("UserName: "+commentBean.getUsernameString() +"<br>"
+				+"Said: "+commentBean.getCommentString()+"<br> <hr></hr>");
+	}
+%>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"s></script>
 <script src="res/loader.jsp"></script>
@@ -25,4 +34,13 @@ function myFunction() {
 }
 </script>
 </body>
+
+  <form class="navbar-form navbar-right" role="search" action="Community">
+      <input style="width:445px" text" class="form-control" value="Write some Chars!!" name="comment" id="search">
+      <input style="width:445px" text" class="form-control" value="Username... could be anything you want" name="username" id="search">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+ 
+</form>
 </html>

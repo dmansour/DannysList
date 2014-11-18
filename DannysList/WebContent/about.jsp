@@ -10,7 +10,6 @@
 </head>
 <body style="background-color: #efefef;">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"s></script>
-<script src="res/loader.jsp"></script>
 <div id="header"></div>
 <script> 
   $("#header").load("header.html");

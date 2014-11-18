@@ -12,6 +12,7 @@ public class FinalStaticDatabaseInfo {
 	public final static String users_table = "Users";
 	public final static String platforms_table = "Platforms";
 	public final static String games_table = "Games";
+	public final static String comments = "Comments";
 	
 	public static class UsersTable{
 		public final static String username = "username";
@@ -29,5 +30,11 @@ public class FinalStaticDatabaseInfo {
 		public final static String link = "link";
 		public final static String year = "year";
 		public final static String cost = "cost";
+	}
+	
+	public static class Comments{
+		public final static String comment_id = "comment_id";
+		public final static String comment = "comment";
+		public final static String username = "username";
 	}
 }

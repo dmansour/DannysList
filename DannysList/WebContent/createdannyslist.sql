@@ -54,6 +54,16 @@ CREATE TABLE Searches(
 	FOREIGN KEY (username) REFERENCES users(username)
 );
 
+CREATE TABLE Comments( 
+	comment_id INT NOT NULL AUTO_INCREMENT,
+	comment VARCHAR(1000) NOT NULL,
+	username VARCHAR(30),
+	PRIMARY KEY(comment_id)
+	);
+
+INSERT INTO Comments  (comment, username) VALUES ("Write something crazy!!!", "testuser");
+INSERT INTO Comments  (comment, username) VALUES ("Come stop useing me on the site... ", "Dr. Im");
+INSERT INTO Comments  (comment, username) VALUES ("Fine... when we get to the end of the project I will take look at removing things", "Johnny");
 INSERT INTO Platforms (platform) VALUES ("N46");
 INSERT INTO Platforms (platform) VALUES ("Playstation 3");
 INSERT INTO Platforms (platform) VALUES ("Playstation 4");
