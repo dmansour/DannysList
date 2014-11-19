@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -70,6 +71,7 @@ public class GetWalmartSearch extends HttpServlet {
 		WalmartSearchResponse wsr = (WalmartSearchResponse) obj;
 		WalmartResponseItems wri = wsr.getItemsList();
 		List<WalmartGame> lwg = wri.getWalmartList();
+		ArrayList<GameBean> search_array = new ArrayList<GameBean>();
 		
 		Iterator it = lwg.iterator();
 		while(it.hasNext()){
@@ -84,10 +86,12 @@ public class GetWalmartSearch extends HttpServlet {
 			gb.setSource("walmart");
 			gb.setSearchTerm(whattosearch);
 			GameDAO.addGame(gb);
+			search_array.add(gb);
 			//System.out.println(gb.getCostDouble());
 		}
 		
 		session.setAttribute("searchterm", whattosearch);
+		session.setAttribute("search_array", search_array);
 		//response.sendRedirect("searchpage.jsp");
 		response.sendRedirect("GetEbaySearch");
 	}

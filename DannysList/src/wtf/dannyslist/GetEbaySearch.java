@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
@@ -43,7 +44,8 @@ public class GetEbaySearch extends HttpServlet {
 		Scanner scanner = null;
 		HttpURLConnection conn = null;
 
-		HttpSession session = request.getSession(true);	 
+		HttpSession session = request.getSession(true);
+		ArrayList<GameBean> search_array = (ArrayList<GameBean>) session.getAttribute("search_array");
 		String whattosearch = (String) session.getAttribute("searchterm");
 		String safestring = whattosearch.replaceAll("\\s", "%20");   
 		String currUser = (String) session.getAttribute("username");
