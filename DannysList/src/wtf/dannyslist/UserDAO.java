@@ -87,7 +87,7 @@ public class UserDAO {
 		String username = bean.getUsername();
 		String password = bean.getPassword();
 	    Statement stmt = null;
-	    String searchQuery = "INSERT INTO users VALUES ('" + username + "','"+ password +"')";
+	    String searchQuery = "INSERT INTO "+FinalStaticDatabaseInfo.users_table+" VALUES ('" + username + "','"+ password +"')";
 	    
 	    
 	    currentCon = ConnectionManager.getConnection();
