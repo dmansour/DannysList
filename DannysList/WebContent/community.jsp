@@ -6,10 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Community</title>
 </head>
 <body>
 <p id="demo" style="text-align: center">Feel like you need to rant?? This is the place //TODO it.<p>
+  <form class="navbar-form navbar-right" role="search" action="Community">
+      <input style="width:445px" text" class="form-control" placeholder="Write some Chars!!" name="comment" id="search">
+      <input style="width:445px" text" class="form-control" placeholder="Username... could be anything you want" name="username" id="search">
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form> 
+  <br>
+  <br>
+  <hr></hr>
 <%
 	ArrayList<CommentBean> commentBeanArrayList = new ArrayList<CommentBean>();
 	CommentDAO.getAllComments(commentBeanArrayList);
@@ -35,12 +43,4 @@ function myFunction() {
 </script>
 </body>
 
-  <form class="navbar-form navbar-right" role="search" action="Community">
-      <input style="width:445px" text" class="form-control" placeholder="Write some Chars!!" name="comment" id="search">
-      <input style="width:445px" text" class="form-control" placeholder="Username... could be anything you want" name="username" id="search">
-      <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-
- 
-</form>
 </html>
