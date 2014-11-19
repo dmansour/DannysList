@@ -37,7 +37,7 @@ public class CommentDAO {
 		+ FinalStaticDatabaseInfo.Comments.username 
 		+ " FROM " 
 		+ FinalStaticDatabaseInfo.comments_table
-		+ ";";
+		+ " ORDER BY "+FinalStaticDatabaseInfo.Comments.comment_id+" DESC;";
 		
 		Connection connection = ConnectionManager.getConnection();
 		try {

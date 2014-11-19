@@ -36,8 +36,8 @@ function myFunction() {
 </body>
 
   <form class="navbar-form navbar-right" role="search" action="Community">
-      <input style="width:445px" text" class="form-control" value="Write some Chars!!" name="comment" id="search">
-      <input style="width:445px" text" class="form-control" value="Username... could be anything you want" name="username" id="search">
+      <input style="width:445px" text" class="form-control" placeholder="Write some Chars!!" name="comment" id="search">
+      <input style="width:445px" text" class="form-control" placeholder="Username... could be anything you want" name="username" id="search">
       <button type="submit" class="btn btn-primary">Submit</button>
       </form>
 
