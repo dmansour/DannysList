@@ -66,7 +66,7 @@ public class GameDAO {
 		
 		Statement stmt = null;
 		
-		String insertQuery = "INSERT INTO games (name, platform_id, year, cost, link, search_term, source) VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link + "','" + search_term + "','" + source +"')";
+		String insertQuery = "INSERT INTO Games (name, platform_id, year, cost, link, search_term, source) VALUES ('" + game + "','" + "1" + "','" + year + "','" + price + "','" + link + "','" + search_term + "','" + source +"')";
 		
 		Connection connection = ConnectionManager.getConnection();
 		
