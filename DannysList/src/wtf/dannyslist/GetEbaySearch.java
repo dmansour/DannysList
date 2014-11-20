@@ -69,30 +69,33 @@ public class GetEbaySearch extends HttpServlet {
 		conn.disconnect();
 		bw.close();
 		
-//		XStream xstream = new XStream();
-//		xstream.processAnnotations(WalmartSearchResponse.class);
-//		
-//		Object obj = xstream.fromXML(new File(file.getAbsolutePath()));
-//		
-//		WalmartSearchResponse wsr = (WalmartSearchResponse) obj;
-//		WalmartResponseItems wri = wsr.getItemsList();
-//		List<WalmartGame> lwg = wri.getWalmartList();
-//		
-//		Iterator it = lwg.iterator();
-//		while(it.hasNext()){
-//			GameBean gb = new GameBean();
-//			
-//			WalmartGame wgame = (WalmartGame) it.next();
-//			gb.setCostDouble(wgame.getSalePrice());
-//			gb.setLinkString(wgame.getProductUrl());
-//			gb.setPlatformIDInt("1");
-//			gb.setNameString(wgame.getName());
-//			gb.setYearInt(2014);
-//			GameDAO.addGame(gb);
-//			//System.out.println(gb.getCostDouble());
-//		}
+		XStream xstream = new XStream();
+		xstream.processAnnotations(EbaySearchResponse.class);
+				
+		Object obj = xstream.fromXML(new File(file.getAbsolutePath()));
 		
+		EbaySearchResponse esr = (EbaySearchResponse) obj;
+		EbayResponseItems eri = esr.getItemsList();
+		List<EbayGame> lwg = eri.getWalmartList();
 		
+		Iterator it = lwg.iterator();
+		while(it.hasNext()){
+			GameBean gb = new GameBean();
+			
+			EbayGame egame = (EbayGame) it.next();
+			gb.setCostDouble(egame.getPrice());
+			gb.setLinkString(egame.getURL());
+			gb.setPlatformIDInt("1");
+			gb.setSource("Ebay");
+			gb.setSearchTerm(whattosearch);
+			gb.setNameString(egame.getTitle());
+			gb.setYearInt(2014);
+			//GameDAO.addGame(gb);
+			search_array.add(gb);
+			//System.out.println(gb.getCostDouble());
+		}
+		
+		session.setAttribute("search_array", search_array);
 		response.sendRedirect("searchpage.jsp");
 	}
 
