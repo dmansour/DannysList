@@ -26,10 +26,11 @@
 		String query = "SELECT "
 				+FinalStaticDatabaseInfo.Games.name +" , "
 				+ FinalStaticDatabaseInfo.Games.link + " , " 
-				+ FinalStaticDatabaseInfo.Games.year + " , "
+				+ "source" + " , "
 				+ FinalStaticDatabaseInfo.Games.cost + " "
-				+ " FROM "+FinalStaticDatabaseInfo.games_table + 
-				" LIMIT " + " 5 " + " ;";
+				+ " FROM " + FinalStaticDatabaseInfo.games_table
+				+ " ORDER BY " + " newest_order DESC "
+				+ " LIMIT " + " 5 " + " ;";
 				
 		Statement statement = connection.createStatement();
 		
@@ -41,7 +42,7 @@
 			GameBean resultGameBean = new GameBean();
 			resultGameBean.setNameString(results.getString(FinalStaticDatabaseInfo.Games.name));
 			resultGameBean.setLinkString(results.getString(FinalStaticDatabaseInfo.Games.link));
-			resultGameBean.setYearInt(Integer.parseInt(results.getString(FinalStaticDatabaseInfo.Games.year)));
+			resultGameBean.setSource(results.getString("source"));
 			resultGameBean.setCostDouble(Double.parseDouble(results.getString(FinalStaticDatabaseInfo.Games.cost)));
 			gameBeanArrayList.add(resultGameBean);
 		}
@@ -76,11 +77,11 @@
 		</center>
 	</div>
 	<br />
-	<div class="index_table" style="width: 50%; margin: auto">
+	<div class="index_table" style="width: 75%; margin: auto">
 		<table class="table table-bordered">
 			<tr style="background-color: #FFF; color: #428bca">
 				<th style="text-align: center">Name</th>
-				<th style="text-align: center">Link</th>
+				<th style="text-align: center">Source</th>
 				<th style="text-align: center">Price</th>
 			</tr>
 			<% for (int i = 0; i < gameBeanArrayList.size(); i++) { %>
@@ -93,9 +94,7 @@
 						</a>
 					</center></td>
 				<td><center>
-						<a
-							href=" <% out.print(gameBeanArrayList.get(i).getLinkString()); %> "
-							target="_blank">Click Me!</a>
+					<% out.print(gameBeanArrayList.get(i).getSource()); %>
 					</center></td>
 				<td><center>
 						<% out.print("$" + df.format(gameBeanArrayList.get(i).getCostDouble())); %>
