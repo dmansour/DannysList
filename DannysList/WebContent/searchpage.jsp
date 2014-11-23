@@ -28,11 +28,15 @@
 				+ "source" + " , "
 				+ FinalStaticDatabaseInfo.Games.cost
 				+ " FROM " + FinalStaticDatabaseInfo.games_table
-				+ " ORDER BY " + " newest_order DESC;";
+				+ " ORDER BY " + " newest_order DESC LIMIT 6;";
 				
 		Statement statement = connection.createStatement();
 		
 		ResultSet results = statement.executeQuery(query);
+		
+		ArrayList<GameBean> gbal = (ArrayList<GameBean>) session.getAttribute("search_array");
+		if(gbal == null){
+			
 		
 		ArrayList<GameBean> gameBeanArrayList = new ArrayList<GameBean>();
 		
@@ -70,7 +74,31 @@
 						<% out.print("$" + df.format(gameBeanArrayList.get(i).getCostDouble())); %>
 					</center></td>
 			</tr>
-			<%} %>
+			<%} } else {%>
+				<div class="index_table" style="width: 75%; margin: auto">
+		<table class="table table-bordered">
+			<tr style="background-color: #FFF; color: #428bca">
+				<th style="text-align: center">Name</th>
+				<th style="text-align: center">Source</th>
+				<th style="text-align: center">Price</th>
+			</tr>
+			<% for (int i = 0; i < gbal.size(); i++) { %>
+			<tr>
+				<td><center>
+						<a
+							href=" <% out.print(gbal.get(i).getLinkString()); %> "
+							target="_blank">
+							<% out.print(gbal.get(i).getNameString()); %>
+						</a>
+					</center></td>
+				<td><center>
+						<% out.print(gbal.get(i).getSource()); %>
+					</center></td>
+				<td><center>
+						<% out.print("$" + df.format(gbal.get(i).getCostDouble())); %>
+					</center></td>
+			</tr>
+			<%} }%>
 		</table>
 	</div>
 </body>
