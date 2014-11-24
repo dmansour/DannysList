@@ -72,6 +72,9 @@ public class EbayGame {
 	@XStreamAlias("topRatedListing")
 	public Boolean topRatedListing;
 	
+	@XStreamAlias("galleryPlusPictureURL")
+	public String gppurl;
+	
 	public String getURL() {
 		return viewItemURL;
 	}
