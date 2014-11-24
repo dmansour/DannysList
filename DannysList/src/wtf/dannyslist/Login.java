@@ -44,8 +44,8 @@ public class Login extends HttpServlet {
 		          response.sendRedirect("searchpage.jsp"); //logged-in page      		
 		     }
 			        
-		     else 
-		          response.sendRedirect("index.jsp"); //error page 
+		     else
+		          response.sendRedirect("login.jsp"); //error page 
 		} 
 				
 				
@@ -77,7 +77,7 @@ public class Login extends HttpServlet {
 		     }
 			        
 		     else 
-		          response.sendRedirect("index.jsp"); //error page 
+		          response.sendRedirect("login.jsp"); //error page 
 		} 
 				
 				
