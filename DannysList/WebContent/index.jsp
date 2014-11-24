@@ -62,8 +62,8 @@
 				  out.println("<div class=\"right-bar\" style=\"float: right\"> <a href=\"login.jsp\" style=\"color: #FFF; padding: 30px\">Login</a> <a href=\"registration.jsp\" style=\"color: #FFF; padding: 30px\">Register</a></div>");
 	   	   }
 	   	   else {
-			  request.getSession().setAttribute("username", "");
-			  out.println("<div class=\"right-bar\" style=\"float: right\"><a href=\"index.jsp\" style=\"color: #FFF; padding: 30px\">Logout</a></div>");
+			  //request.getSession().setAttribute("username", "");
+			  out.println("<div class=\"right-bar\" style=\"float: right\"><a href=\"Logout\" style=\"color: #FFF; padding: 30px\">Logout</a><a href=\"searchpage.jsp\"  style=\"color: #FFF; padding: 30px\">Search Page</a></div>");
 	  	   }
 		
 	%>
@@ -103,4 +103,10 @@
 			<%} %>
 		</table>
 	</div>
+	
+	<script type="text/javascript">
+    function theFunction () {
+    	request.getSession().setAttribute("username", "");
+    }
+	</script>
 </html>

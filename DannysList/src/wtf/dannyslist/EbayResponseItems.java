@@ -14,7 +14,7 @@ public class EbayResponseItems {
 	public List<EbayGame> items;
 	
 	
-	public List<EbayGame> getWalmartList() {
+	public List<EbayGame> getEbayList() {
 		return items;
 	}
 

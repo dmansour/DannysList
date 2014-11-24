@@ -76,7 +76,7 @@ public class GetEbaySearch extends HttpServlet {
 		
 		EbaySearchResponse esr = (EbaySearchResponse) obj;
 		EbayResponseItems eri = esr.getItemsList();
-		List<EbayGame> lwg = eri.getWalmartList();
+		List<EbayGame> lwg = eri.getEbayList();
 		
 		Iterator it = lwg.iterator();
 		while(it.hasNext()){
