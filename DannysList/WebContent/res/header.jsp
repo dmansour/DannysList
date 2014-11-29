@@ -9,9 +9,9 @@
         <li style="width: 150px"><a href="credits.jsp"><font color="#428bca">Credits</font></a>
         <li>
         <form class="navbar-form navbar-right" role="search" action="GetWalmartSearch">
-        <input style="width:445px" text" class="form-control" placeholder="Search For Game..." name="search" id="search">
+        <input style="width:300px" text" class="form-control" placeholder="Search For Game..." name="search" id="search">
         <button type="submit" class="btn btn-primary">Search</button>
-      </form>
+      	</form>
       </li>
       </ul>
     </div>
