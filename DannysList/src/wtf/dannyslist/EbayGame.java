@@ -33,8 +33,11 @@ public class EbayGame {
 	@XStreamAlias("productId")
 	public String productId;
 	
-	@XStreamAlias("paymentMethod")
-	public String shortDescription;
+	//@XStreamAlias("paymentMethod")
+	//public String shortDescription;
+	
+	@XStreamImplicit(itemFieldName="paymentMethod")
+	public ArrayList<String> shorts;
 	
 	@XStreamAlias("autoPay")
 	public Boolean longDescription;
@@ -155,6 +158,9 @@ public class EbayGame {
 		
 		@XStreamAlias("buyItNowAvailable")
 		public Boolean buyitnow;
+		
+		@XStreamAlias("buyItNowPrice")
+		public double buyitnowprice;
 		
 		@XStreamAlias("startTime")
 		public String start;

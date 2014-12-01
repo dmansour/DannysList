@@ -29,6 +29,9 @@ public class WalmartSearchResponse {
 	@XStreamAlias("facets")
 	public String facets;
 	
+	@XStreamAlias("message")
+	public String message;
+	
 	@XStreamAlias("items")
 	public WalmartResponseItems items;
 	

@@ -72,11 +72,13 @@ public class GetWalmartSearch extends HttpServlet {
 		xstream.processAnnotations(WalmartSearchResponse.class);
 
 		Object obj = xstream.fromXML(new File(file.getAbsolutePath()));
+		ArrayList<GameBean> search_array = new ArrayList<GameBean>();
 
 		WalmartSearchResponse wsr = (WalmartSearchResponse) obj;
 		WalmartResponseItems wri = wsr.getItemsList();
-		List<WalmartGame> lwg = wri.getWalmartList();
-		ArrayList<GameBean> search_array = new ArrayList<GameBean>();
+		if(wri != null){
+			List<WalmartGame> lwg = wri.getWalmartList();
+		
 
 		Iterator it = lwg.iterator();
 		while (it.hasNext()) {
@@ -108,6 +110,9 @@ public class GetWalmartSearch extends HttpServlet {
 		session.setAttribute("searchterm", whattosearch);
 		session.setAttribute("search_array", search_array);
 		// response.sendRedirect("searchpage.jsp");
+		} else {
+			session.setAttribute("search_array", search_array);
+		}
 		response.sendRedirect("GetEbaySearch");
 	}
 
