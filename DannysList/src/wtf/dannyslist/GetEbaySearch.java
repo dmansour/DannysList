@@ -77,7 +77,7 @@ public class GetEbaySearch extends HttpServlet {
 		EbaySearchResponse esr = (EbaySearchResponse) obj;
 		EbayResponseItems eri = esr.getItemsList();
 		List<EbayGame> lwg = eri.getEbayList();
-		
+		if(lwg != null){
 		Iterator it = lwg.iterator();
 		while(it.hasNext()){
 			GameBean gb = new GameBean();
@@ -93,6 +93,7 @@ public class GetEbaySearch extends HttpServlet {
 			//GameDAO.addGame(gb);
 			search_array.add(gb);
 			//System.out.println(gb.getCostDouble());
+		}
 		}
 		
 		session.setAttribute("search_array", search_array);

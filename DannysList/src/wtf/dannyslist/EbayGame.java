@@ -42,6 +42,12 @@ public class EbayGame {
 	@XStreamAlias("autoPay")
 	public Boolean longDescription;
 	
+	@XStreamAlias("convertedBuyItNowPrice")
+	public String marcus;
+	
+	@XStreamAlias("secondaryCategory")
+	public String secCat;
+	
 	@XStreamAlias("postalCode")
 	public String postalCode;
 	
