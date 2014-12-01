@@ -8,10 +8,12 @@
         <li style="width: 150px"><a href="community.jsp"><font color="#428bca">Community</font></a>
         <li style="width: 150px"><a href="credits.jsp"><font color="#428bca">Credits</font></a>
         <li>
+        <div style="padding-left: 140px">
         <form class="navbar-form navbar-right" role="search" action="GetWalmartSearch">
         <input style="width:300px" text" class="form-control" placeholder="Search For Game..." name="search" id="search">
         <button type="submit" class="btn btn-primary">Search</button>
       	</form>
+      	</div>
       </li>
       </ul>
     </div>
