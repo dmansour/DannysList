@@ -21,7 +21,7 @@
 	<h4>
     <div style="width: 50%; margin: auto; text-align: center">
     This website was dedicated to offering the user the best way of searching for games/products by returning the lowest
-    prices from various sources. This project was done in our Software Development Project class.
+    prices from various sources. This project was done in our Software Development Project class
     </div></h4>
 	
 
