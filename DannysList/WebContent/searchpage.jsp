@@ -26,6 +26,7 @@
 				+ FinalStaticDatabaseInfo.Games.name +" , "
 				+ FinalStaticDatabaseInfo.Games.link + " , " 
 				+ "source" + " , "
+				+ "newest_order" + " , "
 				+ FinalStaticDatabaseInfo.Games.cost
 				+ " FROM " + FinalStaticDatabaseInfo.games_table
 				+ " ORDER BY " + " newest_order DESC LIMIT 6;";
